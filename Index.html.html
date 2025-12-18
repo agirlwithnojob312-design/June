@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Don Mona 💖</title>
+
+  <!-- Handwritten Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset */
+    * { margin:0; padding:0; box-sizing: border-box; }
+
+    body, html {
+      height: 100%;
+      font-family: 'Sacramento', cursive;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      overflow-x: hidden;
+    }
+
+    /* Password Page */
+    #password-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      background: linear-gradient(to bottom, #ffe4e1, #fff0f5);
+      text-align: center;
+    }
+
+    #password-page h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #ff4d6d;
+    }
+
+    #password-page label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    #password-page input {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      outline: none;
+    }
+
+    #password-page button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #password-page button:hover {
+      background-color: #ff6b81;
+    }
+
+    /* Main Content */
+    #main-content {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+    }
+
+    #main-content h1 {
+      font-size: 3em;
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+
+    #main-content h2 {
+      font-size: 2em;
+      color: #ff6b81;
+      margin-bottom: 30px;
+    }
+
+    #counter {
+      font-size: 2em;
+      color: #ff69b4;
+      margin-bottom: 40px;
+    }
+
+    .section {
+      margin: 40px auto;
+      max-width: 800px;
+      text-align: left;
+    }
+
+    .section h3 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #ff4d6d;
+    }
+
+    .section p {
+      font-size: 1.3em;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* Photo Gallery */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Message Form */
+    .message-form {
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .message-form textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      outline: none;
+      resize: vertical;
+    }
+
+    .message-form button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .message-form button:hover {
+      background-color: #ff6b81;
+    }
+
+    /* Floating Petals */
+    .petal {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-1200px) rotate(360deg); opacity: 0; }
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      #main-content h1 { font-size: 2.5em; }
+      #main-content h2 { font-size: 1.5em; }
+      #counter { font-size: 1.5em; }
+      .section h3 { font-size: 1.5em; }
+      .section p { font-size: 1.1em; }
+      .gallery img { width: 120px; height: 120px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Password Page -->
+<div id="password-page">
+  <h1>💖 For Don Mona 💖</h1>
+  <label for="password-input">Enter Love Password</label>
+  <input type="password" id="password-input" placeholder="Your special password">
+  <button onclick="checkPassword()">Enter</button>
+  <p id="password-error" style="color:red; margin-top:10px;"></p>
+</div>
+
+<!-- Main Content -->
+<div id="main-content">
+  <!-- Floating Petals -->
+  <div id="petals-container"></div>
+
+  <h1>🌞 Our Eternal Connection 🌻</h1>
+  <h2>Long-distance but soul-connected 💫</h2>
+
+  <!-- Days Counter -->
+  <div id="counter"></div>
+
+  <!-- Our Journey -->
+  <div class="section">
+    <h3>Our Journey Together</h3>
+    <p>From the first time we met, every moment has been magical. Every lunch date, every gift, every trip, every call – everything reminds me of you. Even though distance separates us, our hearts remain inseparable. 💕</p>
+  </div>
+
+  <!-- Spiritual Love -->
+  <div class="section">
+    <h3>Spiritual Bond</h3>
+    <p>Our love is like the sun and the sunflower 🌻 — always seeking, always growing, always radiant. No distance, time, or challenge can diminish the connection of our souls. We are two stars shining in the same universe. ✨</p>
+  </div>
+
+  <!-- Photo Gallery -->
+  <div class="section">
+    <h3>Memories in Photos</h3>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/150x150/ff69b4/ffffff?text=Memory+1" alt="Memory 1">
+      <img src="https://via.placeholder.com/150x150/ff4d6d/ffffff?text=Memory+2" alt="Memory 2">
+      <img src="https://via.placeholder.com/150x150/ff6b81/ffffff?text=Memory+3" alt="Memory 3">
+      <!-- Replace with your actual image URLs -->
+    </div>
+  </div>
+
+  <!-- Message Section -->
+  <div class="section">
+    <h3>Messages for You</h3>
+    <p>Every day, my heart writes a new note for you, wishing you happiness, peace, and love. I feel your presence in every breath, and I know that our reunion is only a matter of time. 💌</p>
+    
+    <!-- Send a Message Form -->
+    <div class="message-form">
+      <h4>Leave a Message for Me</h4>
+      <textarea id="message-input" rows="4" placeholder="Write something sweet..."></textarea>
+      <button onclick="saveMessage()">Send 💌</button>
+      <p id="message-status" style="margin-top:10px;"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Password Check
+  function checkPassword() {
+    const password = document.getElementById('password-input').value;
+    const error = document.getElementById('password-error');
+    if(password === 'donmona') { // Change password here
+      document.getElementById('password-page').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+      startCounter();
+      createPetals();
+    } else {
+      error.textContent = "Incorrect password! 💔";
+    }
+  }
+
+  // Days Counter (Updates every hour for efficiency)
+  function startCounter() {
+    const startDate = new Date("2024-06-18"); // Change to your first day
+    const counterEl = document.getElementById('counter');
+    function updateCounter() {
+      const now = new Date();
+      const diff = now - startDate;
+      const days = Math.floor(diff / (1000*60*60*24));
+      counterEl.textContent = `💖 ${days} Days of Love 💖`;
+    }
+    updateCounter(); // Initial update
+    setInterval(updateCounter, 3600000); // Update every hour
+  }
+
+  // Floating Petals (With randomization)
+  function createPetals() {
+    const container = document.getElementById('petals-container');
+    for(let i=0;i<50;i++){
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.style.left = Math.random()*100 + 'vw';
+      petal.style.animationDuration = (5 + Math.random()*10) + 's';
+      const size = 10 + Math.random()*20;
+      petal.style.width = size + 'px';
+      petal.style.height = size + 'px';
+      petal.style.background = `hsl(${Math.random()*60 + 300}, 70%, 80%)`; // Random pink shades
+      container.appendChild(petal);
+    }
+  }
+
+  // Save Message (Local Storage)
+  function saveMessage() {
+    const message = document.getElementById('message-input').value.trim();
+    const status = document.getElementById('message-status');
+    if(message) {
+      const messages = JSON.parse(localStorage.getItem('loveMessages') || '[]');
+      messages.push({ text: message, date: new Date().toISOString() });
+      localStorage.setItem('loveMessages', JSON.stringify(messages));
+      status.textContent = "Message sent! 💖 (Check browser console for all messages)";
+      status.style.color = "green";
+      document.getElementById('message-input').value = '';
+    } else {
+      status.textContent = "Please write a message first! 💔";
+      status.style.color = "red";
+    }
+  }
+</script>
+
+</body>
+</html>
